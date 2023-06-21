@@ -1,0 +1,46 @@
+#logo {
+padding: 50px  0px 96px 48px;
+height: 70px;
+width: 223.8461456298828px;
+left: 48px;
+top: 50px;
+border-radius: 0px;
+text-align: center;
+
+}
+#menu {
+    color: black;
+   
+}
+.menu_bar{
+    width: 320px;
+    height: 100vh;
+    background: #FFFFFF;
+    box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.1);
+}
+a{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    width: 260px;
+    height:  60px;
+    margin-left: 30px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;    
+    line-height: 29px;
+    color: black;
+    text-decoration-line: none;
+}
+a:focus {
+    border-radius: 10px;
+    background-color: #EDEDED;
+}
+.display {
+    display: flex;
+    margin-left: 330px;
+
+}
