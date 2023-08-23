@@ -1,6 +1,6 @@
 import React from 'react';
-import Nav from './component/Nav';
-import Statistics from './component/Statistics';
+import Nav from './Component/Nav';
+import Statistics from './Component/Statistics';
 
 const App = () => {
   return (
