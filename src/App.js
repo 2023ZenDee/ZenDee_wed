@@ -1,14 +1,13 @@
+import React from 'react';
+import Nav from './component/Nav';
+import Statistics from './component/Statistics';
 
-import Amchart from './Amchart';
-import Nav from './Component/Nav';
-  
-const App=()=> {
-
+const App = () => {
   return (
     <div>
-      <Amchart></Amchart>
+      <Nav></Nav>
     </div>
-  )
-}
+  );
+};
 
 export default App;

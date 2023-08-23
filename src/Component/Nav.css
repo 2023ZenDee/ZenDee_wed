@@ -10,18 +10,25 @@ text-align: center;
 }
 #menu {
     color: black;
+
    
 }
 .menu_bar{
+    display:inline ;
     width: 320px;
     height: 100vh;
     background: #FFFFFF;
     box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.1);
-    float: left;
 }
-a{
-    display: flex;
-    flex-direction: column;
+.content{
+    display: inline-block;
+}
+div.menu_bar  ul  li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+div.menu_bar ul li  a{
     text-align: center;
     align-content: center;
     justify-content: center;
@@ -37,11 +44,8 @@ a{
     text-decoration-line: none;
 }
 a:focus {
+    width: 216px;
+    height: 110px;
     border-radius: 10px;
     background-color: #EDEDED;
-}
-.display {
-    display: flex;
-    margin-left: 330px;
-
 }
