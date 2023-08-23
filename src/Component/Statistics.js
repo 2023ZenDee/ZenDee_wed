@@ -1,11 +1,13 @@
 import React from 'react';
-
+import './Statistics.css';
 const Statistics = () => {
     return (
         <div>
+            <div className='background'>
             <h1>통계</h1>
+            </div>
         </div>
     );
 };
 
-export default Statistics;<h1>신고</h1>
+export default Statistics;

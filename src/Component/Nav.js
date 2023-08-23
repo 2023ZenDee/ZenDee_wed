@@ -16,14 +16,14 @@ const Nav = () => {
             <Link to='statistics' >통계</Link>
             </div>
          </div>   
-         <div>
+          <div>
             <Routes>
                 <Route path='/pop_post'element={<PopPost/>}></Route>
                 <Route path='/declaration' element={<Declaration/>}></Route>
                 <Route path='/statistics' element={<Statistics/>}></Route>
                 
             </Routes>
-            </div>    
+            </div>     
         </div>
     );
 };

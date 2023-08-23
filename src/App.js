@@ -1,9 +1,12 @@
 
+import Amchart from './Amchart';
 import Nav from './Component/Nav';
+  
 const App=()=> {
+
   return (
     <div>
-      <Nav></Nav>
+      <Amchart></Amchart>
     </div>
   )
 }
