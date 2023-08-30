@@ -6,8 +6,8 @@ const Statistics = () => {
   return (
     <div>
       <h2>통계</h2>
-      <Poparea></Poparea>
       <Postcount></Postcount>
+      <Poparea></Poparea>
       <Tags></Tags>
     </div>
   );
