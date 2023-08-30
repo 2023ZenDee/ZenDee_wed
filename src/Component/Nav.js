@@ -9,7 +9,7 @@ const Nav = () => {
     return (
         <> 
             <div>
-                <ul className='active'>
+                <ul className='active nav'>
                     <img className='logo' src='/zendeelogo.svg' alt="이미지 불러오기 실패"></img>
                     <li><Link to='pop_post'>인기게시물</Link></li>
                     <li><Link to='declaration'>신고</Link></li>
