@@ -1,5 +1,6 @@
     import React, { useState, useEffect } from 'react';
     import axios from 'axios';
+    import './PopPost.css';
 
 const PopPost = () => {
     const [data,setData] = useState([]);
@@ -15,14 +16,14 @@ const PopPost = () => {
     }, []);
     return (
         <div>
-            <h1>
+            <h1 className='PopPostTitle'>
                 인기 이벤트</h1>
             <div>
-                <ul>
+                <ul className='PopPostList'>
                     <li>좋아요 순</li>
                     <li>댓글 순</li>
                     <li>조회수 순</li>
-                    <select>
+                    <select className='PopPostPlace'>
                         <option>대구광역시</option>
                         <option>대전광역시</option>
                         <option>부산광역시</option>
@@ -33,7 +34,7 @@ const PopPost = () => {
                 </ul>
             </div>
             <div className='content'>
-                <table>
+                <table className=''>
                     <thead>
                     <tr>
                         <th>제목</th>
@@ -42,7 +43,7 @@ const PopPost = () => {
                         <th>작성자</th>
                     </tr>
                     </thead>
-                        <tbody>
+                        <tbody className='popPostTable'>
                             {data.map(item => (
                                 <tr key={item.userReportIdx}>
                                 <td>{item.userReportIdx}</td>

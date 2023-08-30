@@ -1,0 +1,8 @@
+.PopPostList li{
+    display: inline;
+    margin-right: 20px;
+    
+}
+.popPostTable{
+    background-color: red;
+}
