@@ -23,6 +23,8 @@ const Nav = () => {
             </div>
             
             <div className='dixc'>
+                <input className='searchBar'></input>
+
                 <Routes>
                     <Route path='/DeclarationDetails/:postIdx' element={<DeclarationDetails/>}></Route>
                     <Route path='/pop_post'element={<PopPost/>}></Route>
@@ -30,7 +32,6 @@ const Nav = () => {
                     <Route path='/declaration' element={<Declaration/>}></Route>
                     <Route path='/statistics' element={<Statistics/>}></Route>
                 </Routes>
-                <input className='searchBar'></input>
             </div>
         </>
     );
