@@ -25,6 +25,7 @@ const Nav = () => {
                     <Route path='/declaration' element={<Declaration/>}></Route>
                     <Route path='/statistics' element={<Statistics/>}></Route>
                 </Routes>
+                <input className='searchBar'></input>
             </div>
         </>
     );
