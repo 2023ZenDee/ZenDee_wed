@@ -1,7 +1,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import axios from 'axios';
 import './PopPost.css';
 
@@ -28,6 +28,7 @@ const PopPost = () => {
                 break;
             default:
                 alert('존재하지 않는 항목입니다.');
+                
         }
 
         // 서버 요청을 보낼 때 선택된 지역에 따라 쿼리 파라미터(url) 추가
@@ -98,7 +99,7 @@ const PopPost = () => {
                     <tbody className='popPostTable'>
                         {data.map(item => (
                             <tr key={item.postIdx}>
-                                <td>{item.postIdx}</td>
+                                <td><Link to={`/pop_post/${item.postIdx}`}>{item.postIdx}</Link></td>
                                 <td>{item.title}</td>
                                 <td>{item.content}</td> {/* 지역 데이터가 있다면 여기에 넣으세요 */}
                             </tr>

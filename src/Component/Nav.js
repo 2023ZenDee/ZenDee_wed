@@ -3,8 +3,10 @@ import React from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import './Nav.css';
 import PopPost from './PopPost';
+import PopPostDetails from'./PopPostDetails.js';
 import Declaration from './Declaration';
 import Statistics from './Statistics';
+import DeclarationDetails from './DeclarationDetails'
 const Nav = () => {
     return (
         <> 
@@ -19,9 +21,12 @@ const Nav = () => {
                 
                 
             </div>
+            
             <div className='dixc'>
                 <Routes>
+                    <Route path='/DeclarationDetails/:postIdx' element={<DeclarationDetails/>}></Route>
                     <Route path='/pop_post'element={<PopPost/>}></Route>
+                    <Route path='/pop_post/:postIdx' element={<PopPostDetails/>}></Route>
                     <Route path='/declaration' element={<Declaration/>}></Route>
                     <Route path='/statistics' element={<Statistics/>}></Route>
                 </Routes>

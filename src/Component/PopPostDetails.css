@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.content-frame{
+    height: 100vh;
+    width: 80vw;
+    background-color: gray;
+    
+}
