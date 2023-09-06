@@ -5,7 +5,7 @@ import Statistics from './Component/Statistics';
 const App = () => {
   return (
     <div>
-      <Login></Login>
+      <Nav></Nav>
     </div>
   );
 };
