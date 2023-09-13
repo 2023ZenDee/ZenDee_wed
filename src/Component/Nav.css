@@ -3,7 +3,7 @@ ul.nav {
     list-style-type: none;
     margin: 0px;
     padding: 0px;
-    width : 306px;
+    width : 290px;
     background-color: #ffffff;
     position: fixed;
     height: 100%;
@@ -38,10 +38,42 @@ li a:hover:not(.active) {
     margin-left:306px;padding:1px 16px;height:1000px;
 }
 .searchBar {
-    margin: 20px, 50px,50px, 0px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 20px 50px 50px;
     width: 484px;
     height: 52px;
     border-radius: 10px;
     border: 1px solid #6CE0D1;
+}
+.searchInput {    
+    width: 427px;
+    height: 39px;
+    border: none;
+    outline: none;
+}
+.searchIcon {
+    margin-left: 5px;
+    width: 24px;
+    height: 24px;
+}
+.login {
+    height: 52px;
+    text-decoration-line: none;
+    margin-top: 20px;
+    margin-left: 943px;
+    margin-bottom: 0px;
+    color: #074F6C;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.test {
+    
+    display: flex;
+    align-items: center;
+    
 }

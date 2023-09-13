@@ -4,7 +4,7 @@ const Login = () => {
 
 	const [id, setId] = useState("");
 	const [password, setPassword] =useState("");
-
+	const [isLogined, setIsLogined] = useState(false);
 	const onChangeId = (e) => {
 		setId(e.target.value)
 	};
@@ -18,15 +18,30 @@ const Login = () => {
 		password : password
 	};
 
-	const onClickMe = (e) => {
+	const onClickMe = async (e) => {
 		e.preventDefault();
+		if(!id) {
+			return alert("ID를 입력하세요.")
+		}else if(!password) {
+			return alert("비밀번호를 입력하세요.")
+		}
 		setId("");
 		setPassword("");
-
-		axios.post("http://10.80.163.48:8070/auth/login",body)
+		try {
+		await axios.post("http://10.80.161.164:8070/auth/login", body)
 		.then((res) => {
 			console.log(res.data);
-		})
+			switch (res.data.code) {
+				case 200: console.log("로그인 성공"); break;
+				case 400: console.log("ID, 비밀번호가 비어있음"); break;
+				case 401: console.log("존재하지 않는 ID입니다. "); break;
+				case 402: console.log("비밀번호가 틀립니다."); break;			
+				default:break;
+			}
+		});
+		} catch(error) {
+			console.log(error)
+		}
 	}
 
 	return (
