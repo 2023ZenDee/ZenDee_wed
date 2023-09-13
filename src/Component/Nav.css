@@ -35,7 +35,10 @@ li a:hover:not(.active) {
     height: 70px;
 }
 .dixc{
-    margin-left:306px;padding:1px 16px;height:1000px;
+    margin-left:306px;
+    padding-left:37px ;
+    height:95vh ;
+    padding-top:40px ;
 }
 .searchBar {
     display: flex;
