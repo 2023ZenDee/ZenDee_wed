@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom'
 import axios from 'axios';
+import { render } from '@testing-library/react';
+import Nav from './Nav';
 const Login = () => {
 
 	const [id, setId] = useState("");
@@ -18,6 +21,7 @@ const Login = () => {
 		password : password
 	};
 
+
 	const onClickMe = async (e) => {
 		e.preventDefault();
 		if(!id) {
@@ -27,14 +31,23 @@ const Login = () => {
 		}
 		setId("");
 		setPassword("");
+
 		try {
-		await axios.post("http://10.80.161.164:8070/auth/login", body)
+		await axios.post("http://3.36.170.237:8070/auth/login", 
+		body,
+		)
 		.then((res) => {
 			console.log(res.data);
-			switch (res.data.code) {
-				case 200: console.log("로그인 성공"); break;
+			
+
+			switch (res.data.status) {
+				case 200: console.log("로그인 성공");
+				 localStorage.clear();
+				 localStorage.setItem('accessToken', res.data.accessToken);
+				 localStorage.setItem('refreshToken', res.data.refreshToken);
+				break;
 				case 400: console.log("ID, 비밀번호가 비어있음"); break;
-				case 401: console.log("존재하지 않는 ID입니다. "); break;
+				case 401: console.log("존재하지 않는 ID입니다.");break;
 				case 402: console.log("비밀번호가 틀립니다."); break;			
 				default:break;
 			}
@@ -43,19 +56,18 @@ const Login = () => {
 			console.log(error)
 		}
 	}
-
-	return (
+		return (
 		<>
 			<h2>로그인</h2>
 				<form>
 					<label>아이디 : <input type="text" id="id" placeholder='아이디를 입력하세요' value={id} onChange={onChangeId}></input><br/></label>
 					<label>비밀번호 : <input type="password" id="pw" placeholder='비밀번호를 입력하세요' value={password} onChange={onChangePw}></input><br/></label>
+					
 					<button type="submit" onClick={onClickMe}>로그인</button>
 				</form>
-				
-
 		</>
-	);
+		)
+
 };
 
 export default Login;
