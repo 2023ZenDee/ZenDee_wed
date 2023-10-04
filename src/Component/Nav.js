@@ -9,6 +9,10 @@ import Statistics from './Statistics';
 import DeclarationDetails from './DeclarationDetails'
 import Login from './Login'
 const Nav = () => {
+
+    const [loginT,setLoginT] = useState("로그인");
+    const [logoutT, setLogoutT] = useState("로그아웃");
+
     return (
         <> 
             <div>
@@ -21,20 +25,14 @@ const Nav = () => {
             </div>
 
 
-            <div className='blanak'>
-            <div className='searchBar'>
-                    <input className='searchInput'></input>
-                    <img className="searchIcon" src="/img/Search.svg" alt='이미지 불러오기 실패'></img>               
-                    </div>
-            </div>
-
-
             <div className='dixc'>
-
-
-                 {/*<div className='test'>
-                 <Link to="login" className='login'>로그인</Link>
-                </div>*/}
+                <div className='test'>
+                    <div className='searchBar'>
+                        <input className='searchInput'></input>
+                        <img className="searchIcon" src="/img/Search.svg" alt='이미지 불러오기 실패'></img>               
+                    </div>
+                    <p className='login'>로그아웃</p>
+                 </div>
 
 
 
@@ -44,6 +42,7 @@ const Nav = () => {
                     <Route path='/pop_post/:postIdx' element={<PopPostDetails/>}></Route>
                     <Route path='/declaration' element={<Declaration/>}></Route>
                     <Route path='/statistics' element={<Statistics/>}></Route>
+                    <Route path='/' element={<Login/>}></Route>
                     <Route path='/login' element={<Login/>}></Route>
                 </Routes>
             </div>
