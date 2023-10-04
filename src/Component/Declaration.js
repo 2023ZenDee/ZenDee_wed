@@ -6,6 +6,7 @@ import './PopPost.css';
 const PopPost = () => {
 const [data,setData] = useState([]);
 const [sortBy, setSortBy] = useState('events'); // 초기 선택은 좋아요순
+const [address, setAddress] = useState('event');
 useEffect(() => {
 
     let endpoint;

@@ -5,43 +5,50 @@ import axios from 'axios';
 const DetailPage = () => {
     //const [data]
     const {postIdx} = useParams();
-    const [data,setData] = useState('');
+    const [data,setData] = useState([]);
+
     useEffect(() => {
-      
-      axios.get(`https://jsonplaceholder.typicode.com/posts/1`)
+
+        const base = 'http://3.36.170.237:8070';
+        const test_server = "https://jsonplaceholder.typicode.com/posts/1"
+        const complete = "  ${base}/admin/posts/${postIdx}  "
+      axios.get(`${base}/admin/posts/${postIdx}`)
             .then(Response => {
-              console.log(Response)
-              setData(Response.data)
+              console.log(Response.data) // 원래 Response.data.data
+              setData(Response.data) // 원래 Response.data.data
             })
             .catch(error => {
               console.error('Error fetching data:', error);
           });
 
-
     },[postIdx])
-  
 
-    // postId를 사용하여 해당 포스트의 상세 정보를 가져오거나 렌더링합니다.
+    // postIdx를 사용하여 해당 포스트의 상세 정보를 가져오거나 렌더링합니다.
   
     return (
 
-
       <div className='content-frame'>
-
         <h2 className='event-font'>이벤트</h2>
         <h3 className='title-font'>세상에 이런일이 홀리몰리</h3>
+        <p className='report-count'>신고 받은 횟수 n</p>
         <div>
           <table>
             <tr>
               <td>
                 <div className='body-container'>
-                  <p>{data.title}</p>
+                  <p>{data.content}</p>
                 </div>
               </td>
               <td>
                 <div className='comment-container'>
                     <h2 className='comment-title'>댓글</h2>
-                    
+                    {data.comment.map (item => (
+                      <div>
+                        <div>{item.cmtContent}</div>
+                        <div>{item.user}</div>
+                      </div>
+                    ))}
+                    {/* 지역 데이터가 있다면 여기에 넣으세요 */}
                 </div>
               </td>
             </tr>

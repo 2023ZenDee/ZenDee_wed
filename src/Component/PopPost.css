@@ -1,7 +1,57 @@
-.PopPostList li{
-    display: inline;
-    margin-right: 20px; 
-    
+.PopPostList{
+    display: inline-block;
+    margin-top: 20px;
 }
-.popPostTable{
+.PopPostList li{
+    display: inline-block;
+    margin-right: 20px; 
+    font-weight: 500;
+}
+.PopPostList li:hover{
+    color: #5cffd1;
+}
+.PopPostList li:active{
+    color: #5cffd1;
+}
+.map-list-container {
+    border-collapse: separate;
+    border-spacing: 0px 20px;
+}
+.map-list-container tbody tr{
+    background-color: #aaaaaa;
+    padding-bottom: 1px;
+}
+.th-title{
+    margin-top: 10px;
+    width: 50%;
+}
+.th-place{
+    width: 30%;
+}
+.td-title{
+    padding-left: 30px;
+    border-radius: 10px 0px 0px 10px ;
+}
+.td-user{
+    border-radius: 0px 10px 10px 0px ;
+}
+td{
+    background-color: #F9F9F9;
+    margin-bottom: 30px;
+}
+.margin{
+    height: 40px;
+}
+.popPostTable {
+    padding-top: 20px; /* 상단 간격 조정 */
+    padding-bottom: 20px; /* 하단 간격 조정 */
+}
+.active {
+    color: blue; /* 선택한 항목의 색상을 변경하세요 */
+}
+.PopPostPlace{
+    float: right;
+    width: 176px;
+    height: 41px;
+    border-radius: 10px;
 }

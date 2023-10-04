@@ -3,10 +3,11 @@
     padding: 0;
 }
 .content-frame{
-    height: 90vh;
+    height: 85vh;
     width: 78vw;
     background-color: rgb(171, 166, 166);
     border-radius: 20px;
+    margin-bottom: 10vh;
 }
 .event-font{
     padding:15px 31px;
@@ -36,4 +37,18 @@
 .comment-title{
     padding-left:20px ;
     padding-top: 20px;
+}
+.comment-box{
+    margin-top: 20px;
+    width: 23vw;
+    height: 10vh;
+    background-color: blue;
+}
+.exam{
+    display: inline-block   ;
+}
+.report-count{
+    display: inline-block;
+    float: right;
+    padding-right: 10vw;
 }

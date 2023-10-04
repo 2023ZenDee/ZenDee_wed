@@ -20,14 +20,21 @@ const Nav = () => {
                 </ul>    
             </div>
 
-            <div className='dixc'>
-                 <div className='test'>
-                    <div className='searchBar'>
+
+            <div className='blanak'>
+            <div className='searchBar'>
                     <input className='searchInput'></input>
                     <img className="searchIcon" src="/img/Search.svg" alt='이미지 불러오기 실패'></img>               
                     </div>
+            </div>
+
+
+            <div className='dixc'>
+
+
+                 {/*<div className='test'>
                  <Link to="login" className='login'>로그인</Link>
-                 </div>
+                </div>*/}
 
 
 
