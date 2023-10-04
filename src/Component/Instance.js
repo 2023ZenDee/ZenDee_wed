@@ -39,6 +39,7 @@ Instance.interceptors.response.use(
 					'Content-Type': 'application/json',
 					withCredentials: true,
 				}
+				
 			}).then(async (res) => {
 				if (res.status === 200 && res.data.accessToken) {
 					localStorage.setItem("Authorization", res.data.accessToken, {})

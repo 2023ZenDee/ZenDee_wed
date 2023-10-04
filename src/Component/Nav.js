@@ -24,15 +24,15 @@ const Nav = () => {
                 </ul>    
             </div>
 
-
-            <div className='dixc'>
-                <div className='test'>
+             <div className='test'>
                     <div className='searchBar'>
                         <input className='searchInput'></input>
                         <img className="searchIcon" src="/img/Search.svg" alt='이미지 불러오기 실패'></img>               
                     </div>
                     <p className='login'>로그아웃</p>
-                 </div>
+                </div>
+            <div className='dixc'>
+               
 
 
 

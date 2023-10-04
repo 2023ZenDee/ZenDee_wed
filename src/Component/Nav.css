@@ -47,7 +47,7 @@ li a:hover:not(.active) {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0px 0px 20px 1000px;
+    margin: 10px 0px 50px 1000px;
     width: 484px;
     height: 42px;
     border-radius: 10px;
