@@ -3,6 +3,7 @@
     import React, { useState, useEffect } from 'react';
     import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
     import axios from 'axios';
+    import Instance from './Instance';
     import './PopPost.css';
 
     const PopPost = () => {
@@ -18,22 +19,20 @@
         // 데이터 목록중, name에 사용자 입력값이 있는 데이터만 불러오기
         // 사용자 입력값을 소문자로 변경해주었기 때문에 데이터도 소문자로
 
-
-
         useEffect((e) => {
 
             // 정렬 방식에 따라 다른 엔드포인트를 사용하도록 설정   
-            const test_server = "https://jsonplaceholder.typicode.com/posts";
-             const base = 'http://3.36.170.237:8070';
+            //const test_server = "https://jsonplaceholder.typicode.com/posts";
+            // const base = 'http://10.80.162.94:8070';
         
-             let endpoint = `${base}/admin/filter/post?sortBy=${sortBy}`;
+             let endpoint = `/admin/filter/post?sortBy=${sortBy}`;
             
             // 서버 요청을 보낼 때 선택된 지역에 따라 쿼리 파라미터(url) 추가
             if (selectedLocation !== 'all') {
                 endpoint += `?address=${selectedLocation}`;
             }
 
-            axios.get(endpoint)
+            Instance.get(endpoint)
                 .then(response => {
                     console.log(response.data.data)
                     setData(response.data.data)
@@ -75,7 +74,7 @@
 
             return  search.name.toLowerCase().includes(userInput.toLocaleLowerCase());
         });*/
-
+        
         return (
             <div>
                 <h1 className='PopPostTitle'>
@@ -126,7 +125,7 @@
                     </table>
                 </div>
             </div>
-        );
+        )
     };
 
 

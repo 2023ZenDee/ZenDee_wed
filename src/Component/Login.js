@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Instance from './Instance';
 import ReactDOM from 'react-dom'
 import axios from 'axios';
 import { render } from '@testing-library/react';
@@ -22,6 +23,7 @@ const Login = () => {
 	};
 
 
+
 	const onClickMe = async (e) => {
 		e.preventDefault();
 		if(!id) {
@@ -33,7 +35,7 @@ const Login = () => {
 		setPassword("");
 
 		try {
-		await axios.post("http://3.36.170.237:8070/auth/login", 
+		await axios.post("http://3.36.170.237:8070/auth/login",
 		body,
 		)
 		.then((res) => {
@@ -45,10 +47,10 @@ const Login = () => {
 				 localStorage.clear();
 				 localStorage.setItem('accessToken', res.data.accessToken);
 				 localStorage.setItem('refreshToken', res.data.refreshToken);
+				 
 				break;
-				case 400: console.log("ID, 비밀번호가 비어있음"); break;
-				case 401: console.log("존재하지 않는 ID입니다.");break;
-				case 402: console.log("비밀번호가 틀립니다."); break;			
+				case 400: alert("유효하지 않는 사용자 아이디또는 비밀번호가 맞지 않습니다."); break;
+				case 402: alert("비밀번호가 틀립니다."); break;			
 				default:break;
 			}
 		});

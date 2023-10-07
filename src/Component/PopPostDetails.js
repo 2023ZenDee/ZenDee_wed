@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import './PopPostDetails.css';
 import axios from 'axios';
+import Instance from './Instance';
 const DetailPage = () => {
     //const [data]
     const {postIdx} = useParams();
@@ -9,11 +10,11 @@ const DetailPage = () => {
 
     useEffect(() => {
 
-        const base = 'http://3.36.170.237:8070';
-        const test_server = "https://jsonplaceholder.typicode.com/posts/1";
-        const complete = "  ${base}/admin/posts/${postIdx}  ";
-        console.log(`${base}/admin/post/${postIdx}`)
-      axios.get(`${base}/admin/post/${postIdx}`)
+        //const base = 'http://3.36.170.237:8070';
+        // const test_server = "https://jsonplaceholder.typicode.com/posts/1";
+        //const complete = "  ${base}/admin/posts/${postIdx}  ";
+        console.log(`/admin/post/${postIdx}`)
+      Instance.get(`/admin/post/${postIdx}`)
             .then(Response => {
               console.log(Response.data.data) // 원래 Response.data.data
               setData(Response.data.data) // 원래 Response.data.data
