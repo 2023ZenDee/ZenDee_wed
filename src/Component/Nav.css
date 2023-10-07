@@ -35,24 +35,25 @@ li a:hover:not(.active) {
     height: 70px;
 }
 .dixc{
-    margin-left:315px;
-    padding-left:37px ;
-    height:87vh;
+    margin-left:335px;
+    padding-left:28px ;
+    height:83vh;
     padding-top:40px;
     background-color: #EDEDED;
     border-radius: 20px;
     padding-right: 37px;
+    width: 74vw;
 }
 .searchBar {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0px 50px 1000px;
+    margin: 18px 0px 27px 1000px;
     width: 484px;
     height: 42px;
     border-radius: 10px;
     border: 1px solid #6CE0D1;
-    margin-left: 315px;
+    margin-left: 335px;
 
 }
 .searchInput {    
@@ -70,7 +71,7 @@ li a:hover:not(.active) {
     height: 52px;
     text-decoration-line: none;
     margin-top: 20px;
-    margin-left: 900px;
+    margin-left: 150px;
     margin-bottom: 0px;
     color: #074F6C;
     font-family: Pretendard;

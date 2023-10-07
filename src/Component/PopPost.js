@@ -26,8 +26,7 @@
             const test_server = "https://jsonplaceholder.typicode.com/posts";
              const base = 'http://3.36.170.237:8070';
         
-            //  원래 서버 let endpoint = `${base}/admin/filter/posts?sortBy=${sortBy}`;
-            let endpoint = `${test_server}`;
+             let endpoint = `${base}/admin/filter/post?sortBy=${sortBy}`;
             
             // 서버 요청을 보낼 때 선택된 지역에 따라 쿼리 파라미터(url) 추가
             if (selectedLocation !== 'all') {
@@ -36,11 +35,11 @@
 
             axios.get(endpoint)
                 .then(response => {
-                    //console.log(response.data.data)
-                    //setData(response.data.data)
+                    console.log(response.data.data)
+                    setData(response.data.data)
                     
-                    console.log(response.data)
-                    setData(response.data)
+                    //console.log(response.data)
+                    //setData(response.data)
 
                 })
                 .catch(error => {
@@ -109,12 +108,12 @@
                             </tr>
                         </thead>
                         <tbody className='popPostTable'>
-                            {data.map(item => (
-                                <tr key={item.userId}>
-                                    <td className='td-title'><Link to="/pop_post/1">{item.title}</Link></td>
-                                    <td><Link to="/pop_post/1">{item.id}</Link></td>
-                                    <td>{item.body}</td>
-                                    <td className='td-user'>{item.id}</td>
+                            {data ? data.map(item => (
+                                <tr key={item.postIdx}>
+                                    <td className='td-title'><Link to={`/pop_post/${item.postIdx}`}>{item.title}</Link></td>
+                                    <td className='popPost-td'><Link to={`/pop_post/${item.postIdx}`}>{item.tags}</Link></td>
+                                    <td className='popPost-td'>{item.address}</td>
+                                    <td className='td-user popPost-td'>{item.user}</td>
                                 </tr>
                                 /*<tr key={item.postIdx} className='map-list-container'> 
                                     <td><Link to={`/pop_post/${item.postIdx}`}>{item.title}</Link></td>
@@ -122,7 +121,7 @@
                                     <td>{item.address}</td>
                                     <td>{item.user}</td>    
                             </tr>*/ 
-                            ))}
+                            )):''}
                         </tbody>
                     </table>
                 </div>
