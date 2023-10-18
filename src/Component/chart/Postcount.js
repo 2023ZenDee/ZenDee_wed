@@ -19,7 +19,7 @@ class Postcount extends Component {
 		let series = chart.series.push(
 			am5percent.PieSeries.new(root, {
 				valueField: "value",
-				categoryField: "category",
+				categoryField: "country",
 				endAngle: 270
 			})
 		);
@@ -29,25 +29,25 @@ class Postcount extends Component {
 		});
 
 		series.data.setAll([{
-			category: "Lithuania",
+			country: "서울",
 			value: 501.9
 		}, {
-			category: "Czechia",
+			country: "부산",
 			value: 301.9
 		}, {
-			category: "Ireland",
+			country: "광주",
 			value: 201.1
 		}, {
-			category: "Germany",
+			country: "울산",
 			value: 165.8
 		}, {
-			category: "Australia",
+			country: "대전",
 			value: 139.9
 		}, {
-			category: "Austria",
+			country: "대구",
 			value: 128.3
 		}, {
-			category: "UK",
+			country: "창원",
 			value: 99
 		}]);
 
@@ -58,7 +58,7 @@ class Postcount extends Component {
 	render() {
 		return (
 			<>
-				<h2>게시물 수</h2>
+				<h2>인기 지역</h2>
 				<div id="PostCount"style={{ width: "100%", height: "500px" }}></div>
 			</>
 		);

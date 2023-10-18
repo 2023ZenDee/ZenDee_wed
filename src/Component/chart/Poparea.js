@@ -25,7 +25,7 @@ class Poparea extends Component {
       rotation: -90,
       centerY: am5.p50,
       centerX: am5.p100,
-      paddingRight: 15 
+      paddingRight: 15
     });
 
     xRenderer.grid.template.setAll({
@@ -67,55 +67,55 @@ class Poparea extends Component {
     })
     let data = [
     {
-     country: "USA",
-     value: 2025 
+     country: "서울",
+     value: 200 
     }, 
     {
-     country: "China",
-     value: 1882
+     country: "대구",
+     value: 180
     }, 
     {
-      country: "JAPAN",
-      value : 1809
+      country: "인천",
+      value : 180
     },
     {
-      country: "Germany",
-      value: 1322
+      country: "대전",
+      value: 130
     },
     {
-      country: "UK",
-      value: 1122
+      country: "울산",
+      value: 110
     }, 
     {
-    country: "France",
-    value: 1114
+    country: "광주",
+    value: 111
     }, 
     {
-    country: "India",
-    value: 984
+    country: "창원",
+    value: 98
     }, 
     {
-    country: "Spain",
-    value: 711
+    country: "밀양",
+    value: 71
   },
   {
-    country: "Netherlands",
-    value: 665
+    country: "청주",
+    value: 66
   }, 
   {
-    country: "South Korea",
-    value: 443
+    country: "세종",
+    value: 44
   }, 
   {
-    country: "Canada",
-    value: 441
+    country: "부산",
+    value: 44
   }];
 
   xAxis.data.setAll(data);
   series.data.setAll(data);
 
-  series.appear(1000);
-  chart.appear(1000, 100);
+  series.appear(100);
+  chart.appear(100, 10);
 
   return() => root.dispose();
 
@@ -123,7 +123,7 @@ class Poparea extends Component {
 render(){
     return  (
     <>
-    <h2>인기 지역</h2>
+    <h2>게시물 수</h2>
     <div id="PopArea" style={{ width: "100%", height: "500px" }}></div>
     </>
     )
