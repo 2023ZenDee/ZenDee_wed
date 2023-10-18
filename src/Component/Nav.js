@@ -29,7 +29,7 @@ const Nav = () => {
                         <input className='searchInput'></input>
                         <img className="searchIcon" src="/img/Search.svg" alt='이미지 불러오기 실패'></img>               
                     </div>
-                    <p className='login'>로그아웃</p>
+                    <button className='login'>로그아웃</button>
                 </div>
             <div className='dixc'>
                

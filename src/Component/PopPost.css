@@ -61,7 +61,8 @@
     height: 41px;
     border-radius: 10px;
 }
-&::before {
+
+::before {
     content: "⌵";
     position: absolute;
     top: 1px;

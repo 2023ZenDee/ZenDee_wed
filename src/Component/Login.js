@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import axios from 'axios';
 import { render } from '@testing-library/react';
 import Nav from './Nav';
+import { Link } from 'react-router-dom';
 const Login = () => {
 
 	const [id, setId] = useState("");
@@ -44,6 +45,7 @@ const Login = () => {
 
 			switch (res.data.status) {
 				case 200: console.log("로그인 성공");
+				document.location.href ='/pop_post'
 				 localStorage.clear();
 				 localStorage.setItem('accessToken', res.data.accessToken);
 				 localStorage.setItem('refreshToken', res.data.refreshToken);

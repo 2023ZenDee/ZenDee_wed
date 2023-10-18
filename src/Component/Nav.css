@@ -79,6 +79,11 @@ li a:hover:not(.active) {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    background-color: white;
+    border: none;
+}
+.login:active {
+    color: red;
 }
 .test {
     
