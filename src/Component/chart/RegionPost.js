@@ -3,9 +3,9 @@ import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 
-class Poparea extends Component {
+class RegionPost extends Component {
   componentDidMount() {
-    let root = am5.Root.new("PopArea");
+    let root = am5.Root.new("RegionPost");
 
     root.setThemes([am5themes_Animated.new(root)]);
 
@@ -22,10 +22,10 @@ class Poparea extends Component {
 
     let xRenderer = am5xy.AxisRendererX.new(root, {minGridDistance: 30});
     xRenderer.labels.template.setAll({
-      rotation: -90,
+      rotation: 0,
       centerY: am5.p50,
       centerX: am5.p100,
-      paddingRight: 15
+      paddingRight: -15
     });
 
     xRenderer.grid.template.setAll({
@@ -123,11 +123,11 @@ class Poparea extends Component {
 render(){
     return  (
     <>
-    <h2>게시물 수</h2>
-    <div id="PopArea" style={{ width: "100%", height: "500px" }}></div>
+    <h2>지역별 게시물 수</h2>
+    <div id="RegionPost" style={{ width: "100%", height: "500px" }}></div>
     </>
     )
   };
 
 }
-export default Poparea;
+export default RegionPost;

@@ -88,7 +88,7 @@
         }
 
         return (
-            <div>
+            <div className='dixc'>
                 <h1 className='PopPostTitle'>인기 이벤트</h1>
                 <div>
                         <ul className='PopPostList'>

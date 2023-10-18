@@ -2,9 +2,9 @@ import React, {Component} from "react";
 import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy"
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated"
-class Tags extends Component {
+class TimesPost extends Component {
 	componentDidMount()	{
-	let root = am5.Root.new("Tags");
+	let root = am5.Root.new("TimesPost");
 
 root.dateFormatter.setAll({
   dateFormat: "yyyy",
@@ -153,10 +153,10 @@ chart.appear(1000, 100);
 	render() {
 		return (
 			<>
-				<h2>태그</h2>
-				<div id="Tags"style={{ width: "100%", height: "500px" }}></div>
+				<h2>시간대별 게시물 수</h2>
+				<div id="TimesPost"style={{ width: "100%", height: "500px" }}></div>
 			</>
 		);
 	}
 }
-export default Tags;
+export default TimesPost;

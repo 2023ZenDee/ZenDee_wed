@@ -1,0 +1,15 @@
+.lb{
+	position: relative;
+	z-index: 100;
+	margin-top: -88px;
+	width: 100vw;
+	height: 100vh;
+	background: radial-gradient(106.86% 137.68% at 32.63% 26.44%, #7AF6D7 0%, #1BBFC3 100%, #1BBFC3 100%);
+}
+.loginflex{
+	display: flex;
+}
+.lmg{
+	
+	margin-left: 100px;
+}

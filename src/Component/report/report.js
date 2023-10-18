@@ -48,7 +48,7 @@ const handleItemClick = (item) => {
 }
 
 return (
-    <div>
+    <div className='dixc'>
         <h1 className='reportTitle'>신고된 이벤트</h1>
         <div>
             <ul className='reportList'>

@@ -73,3 +73,13 @@ ul.PopPostList .list-item:hover {
     text-align: center;
     background-color: #F9F9F9;
 }   
+.dixc{
+    margin-left:335px;
+    padding-left:28px ;
+    height:83vh;
+    padding-top:40px;
+    background-color: #EDEDED;
+    border-radius: 20px;
+    padding-right: 37px;
+    width: 74vw;
+}

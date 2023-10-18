@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import './Nav.css';
 import PopPost from './PopPost/PopPost';
 import PopPostDetails from'./PopPost/PopPostDetails';
@@ -14,6 +14,17 @@ const Nav = () => {
 
     const [loginT,setLoginT] = useState("로그인");
     const [logoutT, setLogoutT] = useState("로그아웃");
+  
+    const navigate = useNavigate();
+    const logout = () => {
+        localStorage.clear();
+        const answer = window.confirm(`로그아웃 하시겠습니까?`)
+        if(answer == true) {
+            navigate('/login');
+        }else {
+            alert("취소");;
+        }
+    }
 
     return (
         <> 
@@ -30,10 +41,10 @@ const Nav = () => {
                         <input className='searchInput'></input>
                         <img className="searchIcon" src="/img/Search.svg" alt='이미지 불러오기 실패'></img>               
                     </div>
-                    <button className='login'>로그아웃</button>
-                </div>
-            <div className='dixc'>
+                    <button className='login' onClick={logout}>로그아웃</button>
+            </div>
             
+            <div>
                 <Routes>
                     <Route path='/pop_post'element={<PopPost/>}></Route>
                     <Route path='/pop_post/:postIdx' element={<PopPostDetails/>}></Route>

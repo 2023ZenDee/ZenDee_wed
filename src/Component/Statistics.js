@@ -1,18 +1,21 @@
 import React, { useEffect } from 'react';
-import Poparea from './chart/Poparea';
-import Postcount from './chart/Postcount';
-import Tags from './chart/Tags'
+import RegionPost from './chart/RegionPost';
+import Tags from './chart/TimesPost'
+import TagsPost from './chart/TagsPost';
+import TimesPost from './chart/TimesPost';
 const Statistics = () => {
 
 
 
   return (
-    <div>
+    <>
+    <div className='dixc'>
       <h2>통계</h2>
-      <Postcount></Postcount>
-      <Poparea></Poparea>
-      <Tags></Tags>
+      <RegionPost></RegionPost>
+      <TagsPost></TagsPost>
+      <TimesPost></TimesPost>
     </div>
+    </>
   );
 };
 

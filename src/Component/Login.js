@@ -5,6 +5,7 @@ import axios from 'axios';
 import { render } from '@testing-library/react';
 import Nav from './Nav';
 import { Link } from 'react-router-dom';
+import './Login.css';
 const Login = () => {
 
 	const [id, setId] = useState("");
@@ -44,7 +45,7 @@ const Login = () => {
 			
 
 			switch (res.data.status) {
-				case 200: console.log("로그인 성공");
+				case 200: alert("로그인 성공");
 				document.location.href ='/pop_post'
 				 localStorage.clear();
 				 localStorage.setItem('accessToken', res.data.accessToken);
@@ -61,7 +62,9 @@ const Login = () => {
 		}
 	}
 		return (
-		<>
+		<>	
+		<div className='loginflex'>
+			<div className='lb'>
 			<h2>로그인</h2>
 				<form>
 					<label>아이디 : <input type="text" id="id" placeholder='아이디를 입력하세요' value={id} onChange={onChangeId}></input><br/></label>
@@ -69,6 +72,8 @@ const Login = () => {
 					
 					<button type="submit" onClick={onClickMe}>로그인</button>
 				</form>
+				</div>
+		</div>
 		</>
 		)
 
