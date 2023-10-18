@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+.PopPostTitle{
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Pretendard-Regular';
+}
+.PopPostList{
+    display: inline-block;
+    margin-top: 20px;
+}
+.PopPostList li{
+    display: inline-block;  
+    margin-right: 20px; 
+    font-weight: 500;
+    font-family: 'Pretendard-Regular';
+}
+ul.PopPostList .list-item:hover {
+    color: black;
+}
+.PopPostPlace{
+    float: right;
+    width: 176px;
+    height: 41px;
+    border-radius: 10px;
+}
+.map-list-container {
+    border-collapse: separate;
+    border-spacing: 0px 20px;
+}
+.th-font{
+    font-family: 'Pretendard-Regular';
+}
+.td-font{
+    font-family: 'Pretendard-Regular';
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+.td-font-Link{
+    font-family: 'Pretendard-Regular';
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+.td-font-Link:hover{
+    color: #A9ECE3;
+}
+.th-title{
+    margin-top: 10px;
+    width: 50%;
+    height: 20%;
+}
+.th-place{
+    width: 30%;
+}
+.td-title{
+    padding-left: 30px;
+    border-radius: 10px 0px 0px 10px ;
+    width: 20vw;
+    height: 7.3vh;
+    background-color: #F9F9F9;
+}
+.td-user{
+    border-radius: 0px 10px 10px 0px ;
+}
+.popPost-td{
+    width: 80vw;
+    text-align: center;
+    background-color: #F9F9F9;
+}   

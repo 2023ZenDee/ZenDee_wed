@@ -6,7 +6,6 @@ const Statistics = () => {
 
 
 
-
   return (
     <div>
       <h2>통계</h2>

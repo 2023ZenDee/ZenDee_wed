@@ -1,23 +1,17 @@
 
-
     import React, { useState, useEffect } from 'react';
     import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
     import axios from 'axios';
-    import Instance from './Instance';
+    import Instance from '../Instance';
     import './PopPost.css';
+
 
     const PopPost = () => {
         const [data, setData] = useState([]);
         const [sortBy, setSortBy] = useState('likes'); // 초기 선택은 좋아요순
         const [selectedLocation, setSelectedLocation] = useState('all'); // 초기 선택은 모두 보기
-        const [activeItem, setActiveItem] = useState('like'); // 초기 선택은 '좋아요 순'
-        //const [searchList,setSearchList] = useState([]);
-        //const [userInput, setUserInput] = useState("");
-
-        //filter 조건으로 true/false 로 true 인것 만 반환 
-        // 특정 요소를 포함하는지 검사햐여 true of false로 나눔
-        // 데이터 목록중, name에 사용자 입력값이 있는 데이터만 불러오기
-        // 사용자 입력값을 소문자로 변경해주었기 때문에 데이터도 소문자로
+        const [activeItem, setActiveItem] = useState('item1'); // 초기 선택은 '좋아요 순'
+        const [opacity, setOpacity] = useState(1.0);
 
         useEffect((e) => {
 
@@ -25,7 +19,7 @@
             //const test_server = "https://jsonplaceholder.typicode.com/posts";
             // const base = 'http://10.80.162.94:8070';
         
-             let endpoint = `/admin/filter/post?sortBy=${sortBy}`;
+            let endpoint = `/admin/filter/post?sortBy=${sortBy}`;
             
             // 서버 요청을 보낼 때 선택된 지역에 따라 쿼리 파라미터(url) 추가
             if (selectedLocation !== 'all') {
@@ -39,15 +33,14 @@
                     
                     //console.log(response.data)
                     //setData(response.data)
-
                 })
                 .catch(error => {
                     console.error('Error fetching data:', error);
                 });
         }, [sortBy, selectedLocation]);
 
-
         // 정렬 방식을 변경하는 핸들러 함수들
+        /*
         const handleLikesClick = () => {
             setSortBy('likes');
             setActiveItem('like'); // 클릭된 항목을 활성화로 설정
@@ -63,28 +56,45 @@
             setSortBy('views');
             setActiveItem('views'); // 클릭된 항목을 활성화로 설정
         };
+        */
 
         // 지역 선택을 변경하는 핸들러 함수
         const handleLocationChange = (event) => {
             setSelectedLocation(event.target.value);
-            alert(event.target.value);    
         };
 
-        /*const filterSearchList = searchList.filter((search) => {
+        const handleItemClick = (item) => {
+            setActiveItem(item)
+            if(activeItem === 'item1'){
+                setSortBy('likes')
+                console.log('좋아요')
+                console.log(item);
+                //alert('좋아요 순')
+            }           
+            
+            else if(activeItem === 'item2'){
+                setSortBy('comments')
+                //alert('댓글 순')
+                console.log('댓글')
+                console.log(item);
+            }
+            else if(activeItem === 'item3'){
+                setSortBy('views')              
+                //alert('조회수 순')
+                console.log('조회수')
+                console.log(item);
+            }           
+        }
 
-            return  search.name.toLowerCase().includes(userInput.toLocaleLowerCase());
-        });*/
-        
         return (
             <div>
-                <h1 className='PopPostTitle'>
-                    인기 이벤트</h1>
+                <h1 className='PopPostTitle'>인기 이벤트</h1>
                 <div>
-                    <ul className='PopPostList'>
-                        <li className={activeItem === 'like' ? 'active' : ''} onClick={handleLikesClick}  id="like">좋아요 순</li>
-                        <li className={activeItem === 'bads' ? 'active' : ''} onClick={handleCommentsClick} id="bads">싫어요 순</li>
-                        <li className={activeItem === 'views' ? 'active' : ''} onClick={handleViewsClick} id="views">조회수 순</li>
-                    </ul>
+                        <ul className='PopPostList'>
+                            <li className="list-item" style={{ opacity: activeItem === 'item1' ? 1 : 0.5}} onClick={() => handleItemClick('item1')} >좋아요 순</li>
+                            <li className="list-item" style={{ opacity: activeItem === 'item2' ? 1 : 0.5}} onClick={() => handleItemClick('item2')} >댓글 순</li>
+                            <li className="list-item" style={{ opacity: activeItem === 'item3' ? 1 : 0.5}} onClick={() => handleItemClick('item3')} >조회수 순</li>
+                        </ul>
                     <select className='PopPostPlace' onChange={handleLocationChange} value={selectedLocation}>
                         <option value="all">전 지역</option>
                         <option value="서울특별시">서울특별시</option>
@@ -96,30 +106,25 @@
                         <option value="울산광역시">울산광역시</option>
                     </select>
                 </div>
-                <div className='content'>
+
+                <div>
                     <table className='map-list-container'>
                         <thead>
                             <tr>
-                                <th className='th-title'>제목</th>
-                                <th>태그</th>
-                                <th className='th-place'>작성지역</th>
-                                <th>작성자</th>
+                                <th className='th-title th-font'>제목</th>
+                                <th className='th-font'>태그</th>
+                                <th className='th-place th-font'>작성지역</th>
+                                <th className='th-font'>작성자</th>
                             </tr>
                         </thead>
-                        <tbody className='popPostTable'>
+                        <tbody> 
                             {data ? data.map(item => (
                                 <tr key={item.postIdx}>
-                                    <td className='td-title'><Link to={`/pop_post/${item.postIdx}`}>{item.title}</Link></td>
-                                    <td className='popPost-td'><Link to={`/pop_post/${item.postIdx}`}>{item.tags}</Link></td>
-                                    <td className='popPost-td'>{item.address}</td>
-                                    <td className='td-user popPost-td'>{item.user}</td>
+                                    <td className='td-title'><Link className='td-font-Link' to={`/pop_post/${item.postIdx}`}>{item.title}</Link></td>
+                                    <td className='popPost-td'><Link className='td-font-Link' to={`/pop_post/${item.postIdx}`}>{item.tags}</Link></td>
+                                    <td className='popPost-td td-font'>{item.address}</td>
+                                    <td className='td-user popPost-td td-font'>{item.user}</td>
                                 </tr>
-                                /*<tr key={item.postIdx} className='map-list-container'> 
-                                    <td><Link to={`/pop_post/${item.postIdx}`}>{item.title}</Link></td>
-                                    <td><Link to={`/pop_post/${item.postIdx}`}>{item.title}</Link></td>
-                                    <td>{item.address}</td>
-                                    <td>{item.user}</td>    
-                            </tr>*/ 
                             )):''}
                         </tbody>
                     </table>

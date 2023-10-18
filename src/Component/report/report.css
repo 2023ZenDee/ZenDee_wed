@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+.reportTitle{
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Pretendard-Regular';
+}
+.reportList{
+    display: inline-block;
+    margin-top: 20px;
+}
+.reportList li{
+    display: inline-block;  
+    margin-right: 20px; 
+    font-weight: 500;
+    font-family: 'Pretendard-Regular';
+    font-size: 17px;
+}
+.td{
+    background-color: #F9F9F9;
+    width: 80vw;
+    height: 7.3vh;
+    text-align: center;
+    font-family: 'Pretendard-Regular';
+    font-weight: 600;
+}
+
+.report-td-left{
+    border-radius: 10px 0px 0px 10px;
+    background-color: #F9F9F9;
+    padding-left: 30px;
+    font-family: 'Pretendard-Regular';
+    font-weight: 600;
+}
+
+.td-right{
+    border-radius: 0px 10px 10px 0px;
+}
+.table-frame{
+    border-spacing: 0px 10px;
+}
+.th-report-title{
+    margin-top: 10px;
+    width: 50%;
+    height: 20%;
+}
+.td-Link{
+    text-decoration: none;
+    color: black;
+}
+.td-Link:hover{
+    color: #A9ECE3;
+}
