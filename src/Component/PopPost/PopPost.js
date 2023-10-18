@@ -1,7 +1,6 @@
 
     import React, { useState, useEffect } from 'react';
     import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-    import axios from 'axios';
     import Instance from '../Instance';
     import './PopPost.css';
 
@@ -36,6 +35,8 @@
                 })
                 .catch(error => {
                     console.error('Error fetching data:', error);
+
+                    console.log('data가 안 옴')
                 });
         }, [sortBy, selectedLocation]);
 

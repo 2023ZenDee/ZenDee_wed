@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Link, Routes, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import axios from 'axios';
 
 import './report.css';
@@ -48,17 +48,7 @@ const handleItemClick = (item) => {
 }
 
 return (
-    <div>
-        <h1 className='reportTitle'>신고된 이벤트</h1>
-        <div>
-            <ul className='reportList'>
-                <li className="report-item" style={{opacity: activeItem === 'report-item1' ? 1 : 0.5}} onClick={() => handleItemClick('report-item1')}>이벤트</li> {/*클릭 하면 테이블 데이터만 갈아 끼우기 */}
-                <li className='report-item' style={{opacity: activeItem === 'report-item2' ? 1 : 0.5}} onClick={() => handleItemClick('report-item2')}><Link to="/report/user">사용자</Link></li>
-                <li className='report-item' style={{opacity: activeItem === 'report-item3' ? 1 : 0.5}} onClick={() => handleItemClick('report-item3')}>댓글</li>
-            </ul>
-        </div>
-
-        {/*<div className='content'>
+    <div  className='content'>
             <table className='table-frame'>
                 <thead>
                 <tr>
@@ -79,9 +69,7 @@ return (
                         )): ''}
                     </tbody>
             </table>               
-         </div>*/}
-         <Outlet/>
-    </div>
+        </div>
 
 );
 };

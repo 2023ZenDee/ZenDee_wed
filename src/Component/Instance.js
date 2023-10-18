@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import axios from 'axios';
 
 const Instance = axios.create({
-	baseURL: 'http://10.80.162.94:8070',
+	baseURL: 'http://3.36.170.237:8070',//'http://10.80.162.94:8070',
 	headers: {
 		'Content-Type': 'application/json',
 	}

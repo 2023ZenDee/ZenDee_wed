@@ -53,17 +53,16 @@
     overflow-y: scroll;
 }
 .comment-title{
-    padding-bottom: 20px;
     font-family: 'Pretendard-Regular'; 
     font-size: 28px;
 }
 .comment-box{
     margin-top: 20px;
-    width: 15vw;
+    width: 17.5vw;
     display: flex;
     word-wrap: break-word;
     align-items: flex-start;
-    padding: 10px;
+    padding-bottom: 10px;
 }
 .profile{
     object-fit: cover;
