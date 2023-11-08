@@ -1,61 +1,86 @@
-import React, { Component } from "react";
+import React, {useCallback, useEffect } from "react";
 import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
+import Instance from "../Instance"
 
-class TagsPost extends Component {
-  componentDidMount() {
-    let root = am5.Root.new("TagsPost");
+const TagsPost = () => {
+  const regionPath = "/admin/statistics/issues/tag"
+ 
+  const fetchData = async () => {
+
+    try{
+      const res = await Instance.get(regionPath)
+      const dataFromServer = Object.values(res.data.data);
+      const newData = dataFromServer.map((item) => ({
+        tag: item.tagName,
+        value : item.value
+      }))
+        return newData;
+
+    } catch (error){
+        console.log("데이터 불러오기 실패", error);
+        return [];
+      }
+  }
+  useCallback(() => {
+    fetchData();
+  },[])
+  useEffect(() => {
+    fetchData().then((newData) => {
+    const root = am5.Root.new("TagsPost");
 
     root.setThemes([am5themes_Animated.new(root)]);
 
-    let chart = root.container.children.push(am5xy.XYChart.new(root, {
+    const chart = root.container.children.push(am5xy.XYChart.new(root, {
       panX: true,
       panY: true,
       wheelX: "panX",
       wheelY: "zoomX",
-      pinchZoomX: true
+      pinchZoomX: true,
+
     }));
 
-    let cursor = chart.set("cursor", am5xy.XYCursor.new(root,{}));
+    const cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
     cursor.lineY.set("visible", false);
 
-    let xRenderer = am5xy.AxisRendererX.new(root, {minGridDistance: 30});
+    const xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
     xRenderer.labels.template.setAll({
       rotation: 0,
       centerY: am5.p50,
       centerX: am5.p100,
-      paddingRight: -15
+      paddingRight: -15,
     });
 
     xRenderer.grid.template.setAll({
-      location: 1
+      location: 1,
     });
 
-    let xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+    const xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
       maxDeviation: 0.3,
-      categoryField: "country",
-      renderer : xRenderer,
-      tooltip: am5.Tooltip.new(root, {})
+      categoryField: "tag",
+      renderer: xRenderer,
+      tooltip: am5.Tooltip.new(root, {}),
     }));
 
-    let yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+    const yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
       maxDeviation: 0.3,
       renderer: am5xy.AxisRendererY.new(root, {
-        strokeOpacity: 0.1
-      })
+        strokeOpacity: 0.1,
+      }),
+  
     }));
 
-    let series = chart.series.push(am5xy.ColumnSeries.new(root, {
-      name : "Series 1",
+    const series = chart.series.push(am5xy.ColumnSeries.new(root, {
+      name: "Series 1",
       xAxis: xAxis,
       yAxis: yAxis,
       valueYField: "value",
       sequencedInterpolation: true,
-      categoryXField: "country",
-      tooltip : am5.Tooltip.new(root, {
-        labelText: "{valueY}"
-      })
+      categoryXField: "tag",
+      tooltip: am5.Tooltip.new(root, {
+        labelText: "{valueY}",
+      }),
     }));
 
     series.columns.template.setAll({cornerRadiusTL: 5, cornerRadiusTR: 5, strokeOpacity: 0});
@@ -64,70 +89,24 @@ class TagsPost extends Component {
     });
     series.columns.template.adapters.add("stroke", function(stroke, target) {
       return chart.get("colors").getIndex(series.columns.indexOf(target));
-    })
-    let data = [
-    {
-     country: "서울",
-     value: 200 
-    }, 
-    {
-     country: "대구",
-     value: 180
-    }, 
-    {
-      country: "인천",
-      value : 180
-    },
-    {
-      country: "대전",
-      value: 130
-    },
-    {
-      country: "울산",
-      value: 110
-    }, 
-    {
-    country: "광주",
-    value: 111
-    }, 
-    {
-    country: "창원",
-    value: 98
-    }, 
-    {
-    country: "밀양",
-    value: 71
-  },
-  {
-    country: "청주",
-    value: 66
-  }, 
-  {
-    country: "세종",
-    value: 44
-  }, 
-  {
-    country: "부산",
-    value: 44
-  }];
+    });
+    let data = [...newData];
 
-  xAxis.data.setAll(data);
-  series.data.setAll(data);
+    xAxis.data.setAll(data);
+    series.data.setAll(data);
 
-  series.appear(100);
-  chart.appear(100, 10);
+    series.appear(1000);
+    chart.appear(1000, 100);
 
-  return() => root.dispose();
+  });
+  }, []);
 
-};
-render(){
-    return  (
+  return (
     <>
-    <h2>지역별 게시물 수</h2>
-    <div id="TagsPost" style={{ width: "100%", height: "500px" }}></div>
+      <h2>태그별 게시물 수</h2>
+      <div id="TagsPost" style={{ width: "100%", height: "500px" }}></div>
     </>
-    )
-  };
+  );
+};
 
-}
 export default TagsPost;

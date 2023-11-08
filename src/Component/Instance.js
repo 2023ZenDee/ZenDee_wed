@@ -9,7 +9,8 @@ const Instance = axios.create({
 });
 
 
-Instance.interceptors.request.use((config) => {
+
+ Instance.interceptors.request.use((config) => {
 	const accessToken = localStorage.getItem("accessToken");
 	const refreshToken = localStorage.getItem("refreshToken");
 	if (!accessToken) {

@@ -1,10 +1,9 @@
-<svg width="1920" height="1252" viewBox="0 0 1920 1252" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="1920" height="1252" fill="url(#paint0_radial_2272_101)"/>
+<svg width="1920" height="1568" viewBox="0 0 1920 1568" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1920" height="1568" fill="url(#paint0_radial_824_2841)"/>
 <defs>
-<radialGradient id="paint0_radial_2272_101" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(626.5 330.969) rotate(36.2426) scale(2178.49 1423.15)">
-<stop stop-color="#7AF6D7"/>
-<stop offset="1" stop-color="#1BBFC3"/>
-<stop offset="1" stop-color="#1BBFC3"/>
+<radialGradient id="paint0_radial_824_2841" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(451.5 319.407) rotate(42.2637) scale(2333.6 1598.31)">
+<stop stop-color="#3EE8DC"/>
+<stop offset="1" stop-color="#0FABBF"/>
 </radialGradient>
 </defs>
 </svg>

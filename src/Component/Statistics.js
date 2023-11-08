@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import RegionPost from './chart/RegionPost';
-import Tags from './chart/TimesPost'
 import TagsPost from './chart/TagsPost';
 import TimesPost from './chart/TimesPost';
 const Statistics = () => {

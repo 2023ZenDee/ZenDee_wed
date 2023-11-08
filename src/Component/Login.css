@@ -1,15 +1,89 @@
 .lb{
+   
+	display: flex;
 	position: relative;
 	z-index: 100;
 	margin-top: -88px;
 	width: 100vw;
 	height: 100vh;
-	background: radial-gradient(106.86% 137.68% at 32.63% 26.44%, #7AF6D7 0%, #1BBFC3 100%, #1BBFC3 100%);
+  background: radial-gradient(104.92% 134.57% at 23.52% 20.37%, #3EE8DC 0%, #0FABBF 100%);
+
 }
-.loginflex{
+
+.img-container{
 	display: flex;
+  align-items: center;
+  
 }
+
 .lmg{
+	margin-left: 5vw;
+  max-width: 100%;
+  height: auto;
+}
+
+.form-container{
+  margin-left: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginform{
+  padding: 20px;
+  text-align: center;
+  width: 100px;
+  border: none;
 	
-	margin-left: 100px;
+}
+
+.label {
+  color: rgba(7, 79, 108, 0.48);
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+  margin-top: 15px;
+}
+
+.inputbox {
+  width: 485px;
+  height: 80px;
+  padding-left: 18px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 20px;
+  background: #FFF;
+
+  color: #042734;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.Lbutton {
+  width: 97px;
+  height: 42px;
+  color: #FFF;
+  font-family: Pretendard;
+  font-size: 35px;
+
+  margin-top: 35px;
+  margin-left: 220px;
+
+  font-weight: 600;
+  width: 276px;
+  height: 80px;
+  border-radius: 40px 5px;
+  background: #1A8796;
+  border : none;
+}
+.Lbutton:active {
+ background: #0F5D67;
+ color: #CECECE;
+}
+input:focus {
+  outline: none;
 }

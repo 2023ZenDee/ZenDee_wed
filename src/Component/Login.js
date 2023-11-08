@@ -63,17 +63,28 @@ const Login = () => {
 	}
 		return (
 		<>	
-		<div className='loginflex'>
-			<div className='lb'>
-			<h2>로그인</h2>
-				<form>
-					<label>아이디 : <input type="text" id="id" placeholder='아이디를 입력하세요' value={id} onChange={onChangeId}></input><br/></label>
-					<label>비밀번호 : <input type="password" id="pw" placeholder='비밀번호를 입력하세요' value={password} onChange={onChangePw}></input><br/></label>
-					
-					<button type="submit" onClick={onClickMe}>로그인</button>
-				</form>
+			<div className='root'>
+				<div className='lb'>
+					<div className='img-container'>
+						<div className='lmg'>
+							<img src="loginIMG.svg"></img>					
+						</div>
+					</div>
+
+					<div className="form-container">
+						<div className='loginform'>
+							<form>
+								<label for="id" className='label'>아이디&nbsp;&nbsp;&nbsp;&nbsp;</label>
+								<input className='inputbox' type="text" id="id" placeholder='아이디를 입력하세요' value={id} onChange={onChangeId}></input>
+								<label for="pw" className='label'>비밀번호</label>
+								<input className='inputbox' type="password" id="pw" placeholder='비밀번호를 입력하세요' value={password} onChange={onChangePw}></input>
+								<button className="Lbutton" type="submit" onClick={onClickMe}>로그인</button>
+							</form>
+						</div>
+					</div>
+
 				</div>
-		</div>
+			</div>
 		</>
 		)
 
