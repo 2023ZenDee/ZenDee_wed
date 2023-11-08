@@ -18,8 +18,9 @@ const PopPostDetails = () => {
             .then(Response => {
               console.log(Response.data.data) // 원래 Response.data.data
               setData(Response.data.data) // 원래 Response.data.data
+              
             })
-            .catch(error => {
+            .catch(error => { 
               console.error('Error fetching data:', error);
           });
 

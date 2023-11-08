@@ -18,12 +18,13 @@
             //const test_server = "https://jsonplaceholder.typicode.com/posts";
             // const base = 'http://10.80.162.94:8070';
         
-            let endpoint = `/admin/filter/post?sortBy=${sortBy}`;
+            let endpoint = `/admin/filter/post?sortBy=${sortBy}&page=1&pageSize=7`;
             
             // 서버 요청을 보낼 때 선택된 지역에 따라 쿼리 파라미터(url) 추가
             if (selectedLocation !== 'all') {
                 endpoint += `?address=${selectedLocation}`;
             }
+            
             
             Instance.get(endpoint)
                 .then(response => {
