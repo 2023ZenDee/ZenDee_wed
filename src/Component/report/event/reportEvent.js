@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import axios from 'axios';
 
-import './report.css';
+import './reportEvent.css';
 
-const Report = () => {
+const ReportEvent = () => {
 const [data,setData] = useState([]);
 const [sortBy, setSortBy] = useState('issue'); // 초기 선택은 좋아요순
 const [activeItem, setActiveItem] = useState('report-item1'); // 초기 선택은 '좋아요 순'
@@ -14,7 +14,6 @@ useEffect(() => {
 
     let base = 'http://3.36.170.237:8070';
     let endpoint = `${base}/admin/reported/${sortBy}`;
-
 
      axios.get(endpoint) // 서버 주소
     .then(Response => {
@@ -27,7 +26,7 @@ useEffect(() => {
     })
     }, []);
 
-const handleItemClick = (item) => {
+    const handleItemClick = (item) => {
     setActiveItem(item)
     if(activeItem === 'report-item1'){
         setSortBy('issue')
@@ -44,11 +43,11 @@ const handleItemClick = (item) => {
         setSortBy('comment')              
         console.log('댓글')
         console.log(item);
-    }           
+    }
 }
 
 return (
-    <div  className='content'>
+    <div className='content'>
             <table className='table-frame'>
                 <thead>
                 <tr>
@@ -70,9 +69,8 @@ return (
                     </tbody>
             </table>               
         </div>
-
 );
 };
 
-export default Report;
+export default ReportEvent;
 

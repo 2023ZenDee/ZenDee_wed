@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import './PopPostDetails.css';
-import Instance from '../Instance';
+import Instance from '../../Instance';
 const PopPostDetails = () => {
     //const [data]
     const {postIdx} = useParams();
@@ -33,7 +33,6 @@ const PopPostDetails = () => {
         <h2 className='event-font'>이벤트</h2>
         <h3 className='title-font'>{data.title}</h3>
         <p className='report-count'>신고 받은 횟수 11번</p>
-
         <div>
           <table>
             <tr>
@@ -60,7 +59,6 @@ const PopPostDetails = () => {
             </tr>
           </table>
         </div>
-
     </div>
 
     );

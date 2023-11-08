@@ -52,6 +52,9 @@
     text-decoration: none;
     color: black;
 }
+.td-Link:hover{
+    color: #A9ECE3;
+}
 .dixc{
     margin-left:335px;
     padding-left:28px ;
@@ -61,24 +64,4 @@
     border-radius: 20px;
     padding-right: 37px;
     width: 74vw;
-}
-.nav-user{
-    font-size: 17px;
-    text-decoration: none;     
-    color: black;
-}
-.nav-event{
-    font-size: 17px;
-    text-decoration: none;      
-    color: black;
-
-
-}
-.nav-comment{
-    font-size: 17px;
-    text-decoration: none;      
-    color: black;
-}
-.report-item{
-    padding: 0px;
 }

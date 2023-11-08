@@ -24,7 +24,7 @@
             if (selectedLocation !== 'all') {
                 endpoint += `?address=${selectedLocation}`;
             }
-
+            
             Instance.get(endpoint)
                 .then(response => {
                     console.log(response.data)
@@ -34,7 +34,7 @@
                     //setData(response.data)
                 })
                 .catch(error => {
-                    console.error('Error fetching data:', error);
+                    console.log('Error fetching data:', error);
 
                     console.log('data가 안 옴')
                 });
@@ -86,7 +86,6 @@
                 console.log(item);
             }           
         }
-
         return (
             <div className='dixc'>
                 <h1 className='PopPostTitle'>인기 이벤트</h1>

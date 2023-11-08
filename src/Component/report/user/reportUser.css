@@ -52,6 +52,9 @@
     text-decoration: none;
     color: black;
 }
+.td-Link:hover{
+    color: #A9ECE3;
+}
 .dixc{
     margin-left:335px;
     padding-left:28px ;
@@ -62,23 +65,47 @@
     padding-right: 37px;
     width: 74vw;
 }
-.nav-user{
-    font-size: 17px;
-    text-decoration: none;     
-    color: black;
+.report_profile_img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
 }
-.nav-event{
-    font-size: 17px;
-    text-decoration: none;      
-    color: black;
-
+.report_user_text{
+    margin-bottom: 20px;
+    display: inline-block;
 
 }
-.nav-comment{
-    font-size: 17px;
-    text-decoration: none;      
-    color: black;
+.report_user_box_frame{
+    background-color: white;
+    width: 35vw;
+    height: 15.6vh;
+    border-radius: 10px;
 }
-.report-item{
-    padding: 0px;
+.report_user_box{
+    display: inline-block;
+    border-radius: 0px 10px 10px 0px;
+    vertical-align: middle;
+    list-style: none;
+    margin-top: 30px;
+}
+.report_user_link1{
+    text-decoration: none;
+    color: black;
+    margin: 0px 0px 0px 30px;
+}
+.report_user_link2{
+    text-decoration: none;
+    color: black;
+    margin: 0px 0px 0px 25px;
+    font-size: 18px;
+    font-family: 'Pretendard-Regular';
+    font-weight: bold;
+}
+.report_user_link3{
+    text-decoration: none;
+    color: black;
+    margin: 0px 0px 0px 130px;
+    font-size: 18px;
+    font-family: 'Pretendard-Regular';
+    font-weight: bold;
 }

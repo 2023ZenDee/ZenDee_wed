@@ -4,21 +4,9 @@
     font-weight: 400;
     font-style: normal;
 }
-.reportTitle{
-    font-size: 32px;
-    font-weight: bold;
+.commentTitle{
+    font-size: 24px;
     font-family: 'Pretendard-Regular';
-}
-.reportList{
-    display: inline-block;
-    margin-top: 20px;
-}
-.reportList li{
-    display: inline-block;  
-    margin-right: 20px; 
-    font-weight: 500;
-    font-family: 'Pretendard-Regular';
-    font-size: 17px;
 }
 .td{
     background-color: #F9F9F9;
@@ -40,6 +28,9 @@
 .td-right{
     border-radius: 0px 10px 10px 0px;
 }
+.td-left{
+    border-radius: 10px 0px 0px 10px;
+}
 .table-frame{
     border-spacing: 0px 10px;
 }
@@ -52,33 +43,16 @@
     text-decoration: none;
     color: black;
 }
+.td-Link:hover{
+    color: #A9ECE3;
+}
 .dixc{
     margin-left:335px;
-    padding-left:28px ;
+    padding-left:28px;
     height:83vh;
     padding-top:40px;
     background-color: #EDEDED;
     border-radius: 20px;
     padding-right: 37px;
     width: 74vw;
-}
-.nav-user{
-    font-size: 17px;
-    text-decoration: none;     
-    color: black;
-}
-.nav-event{
-    font-size: 17px;
-    text-decoration: none;      
-    color: black;
-
-
-}
-.nav-comment{
-    font-size: 17px;
-    text-decoration: none;      
-    color: black;
-}
-.report-item{
-    padding: 0px;
 }

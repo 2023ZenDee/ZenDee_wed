@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'; 
 import { useParams } from "react-router-dom";
 import './reportDetails.css';
-import Instance from '../Instance';
+import Instance from '../../Instance';
 const ReportDetails = () => {
     const {reportIdx} = useParams();
     const [data,setData] = useState({})
@@ -25,7 +25,7 @@ const ReportDetails = () => {
     return (
       <div>
 
-        <h2 className='event-font'>신고된 이벤트</h2>
+        {/*<h2 className='event-font'>신고된 이벤트</h2>*/}
         <h3 className='title-font'> </h3>
         <p className='report-count'>신고 받은 횟수 {data.postreporter}번</p>
 
