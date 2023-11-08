@@ -31,10 +31,14 @@
 
 .report-td-left{
     border-radius: 10px 0px 0px 10px;
-    background-color: #F9F9F9;
     padding-left: 30px;
     font-family: 'Pretendard-Regular';
     font-weight: 600;
+    margin-bottom: 20px;
+    opacity: 1;
+    border-left: none;
+    border-top: 2px solid rgb(207, 206, 206);
+    border-bottom: 2px solid rgb(207, 206, 206);
 }
 
 .td-right{

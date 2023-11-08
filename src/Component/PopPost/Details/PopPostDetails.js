@@ -14,7 +14,7 @@ const PopPostDetails = () => {
         //const complete = "  ${base}/admin/posts/${postIdx}  ";
 
         console.log(`/admin/post/${postIdx}`)
-      Instance.get(`/admin/post/${postIdx}`)
+      Instance.get(`/admin/detail/post/${postIdx}`)
             .then(Response => {
               console.log(Response.data.data) // 원래 Response.data.data
               setData(Response.data.data) // 원래 Response.data.data
@@ -30,7 +30,7 @@ const PopPostDetails = () => {
   
     return (
       <div>
-
+      <div className='dixc'>
         <h2 className='event-font'>이벤트</h2>
         <h3 className='title-font'>{data.title}</h3>
         <p className='report-count'>신고 받은 횟수 11번</p>
@@ -59,6 +59,7 @@ const PopPostDetails = () => {
               </td>
             </tr>
           </table>
+        </div>
         </div>
     </div>
 

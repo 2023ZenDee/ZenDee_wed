@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import axios from 'axios';
 
 import './reportEvent.css';
+import Instance from '../../Instance';
 
 const ReportEvent = () => {
 const [data,setData] = useState([]);
@@ -12,12 +13,10 @@ const [activeItem, setActiveItem] = useState('report-item1'); // 초기 선택�
 useEffect(() => {
 
 
-    let base = 'http://3.36.170.237:8070';
-    let endpoint = `${base}/admin/reported/${sortBy}`;
-
-     axios.get(endpoint) // 서버 주소
+    let endpoint = `/admin/reported/${sortBy}?page=1&pageSize=7`;
+     Instance.get(endpoint) // 서버 주소
     .then(Response => {
-        //if(Response.data.status === 200)
+        //if(Response.data.status === 200)  
             setData(Response.data.data);
             console.log(Response)
     })
