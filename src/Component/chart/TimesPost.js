@@ -14,7 +14,7 @@ const TimesPost = () => {
       console.log(dataFromServer);
       const newData = dataFromServer.map((item) => ({
         hour: item.time,
-        value: item.value,
+        value: item.value + 1
       }));
       return newData;
     } catch (error) {
@@ -86,8 +86,8 @@ const TimesPost = () => {
         orientation: "horizontal"
       }));
 
-      series.appear(1000);
-      chart.appear(1000, 100);
+      series.appear(100);
+      chart.appear(100, 10);
     });
   }, [fetchData]);
 
